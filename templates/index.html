@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Riley</title>
+    <style>
+        /* Apply styles for the heading */
+        .heading {
+            background-color: #DDD0C8;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px; /* Add padding for spacing */
+            font-size: 36px; /* Increase font size (adjust as needed) */
+        }
+
+        /* Apply styles for the divider */
+        .divider {
+            border-top: 5px solid #DDD0C8; /* Horizontal line with your specified color */
+            margin: 10px 0; /* Add margin for spacing */
+        }
+
+        /* Apply styles for the container div */
+        .container {
+            display: flex; /* Use flexbox for layout */
+            align-items: flex-start; /* Align items at the top */
+            flex-direction: row; /* Stack elements vertically */
+        }
+
+        /* Apply styles for the image */
+        .image {
+            margin-right: 10px; /* Add some margin for spacing */
+        }
+
+        /* Apply styles for the right column */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* Apply styles for the text area */
+        textarea {
+            flex: 1; /* Allow the text area to grow and take remaining space */
+            height: 100px; /* Set an appropriate height */
+        }
+
+        /* Apply styles for the submit button */
+        .submit-button {
+            background-color: #0067A4;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Apply styles for the response text */
+        .response-text {
+            margin-top: 20px; /* Add margin to separate from the form */
+        }
+    </style>
+</head>
+<body>
+    <!-- Heading with styles -->
+    <div class="heading">
+        Riley: Your Local CPU GPT
+    </div>
+
+    <!-- Plain text lines -->
+    <p>Welcome to Riley, your local assistant. You may submit your queries here.</p>
+    <p>Note: Our application employs an advanced AI Language Model (LLM) to assist you. Please be aware that LLMs can occasionally produce inaccurate or unintended information, which may lead to misunderstandings or even hallucinations. User discretion is advised. Always verify critical information independently.</p>
+	<p>Credits:</p>
+	<a href="url">https://huggingface.co/TheBloke</a><br />
+	<a href="url">https://leonardo.ai/</a>
+		
+    <!-- Divider line -->
+    <div class="divider"></div>
+
+    <!-- Container for image and text area -->
+    <div class="container">
+        <!-- Left column with image -->
+        <div class="image">
+            <img src="{{url_for('static',filename='Llama2.png')}}" alt="Your Image">
+        </div>
+
+        <!-- Right column with input box, submit button, and responses -->
+        <div class="right-column">
+            <!-- Multiline input text box -->
+            <form method="POST">
+                <textarea name="user_input" rows="10" cols="100"></textarea><br>
+                <input type="submit" value="Submit" class="submit-button">
+            </form> 
+
+            <!-- Response text -->
+            <div class="response-text">
+                {{ response_text | safe }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
