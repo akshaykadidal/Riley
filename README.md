@@ -34,4 +34,7 @@ To use this CPU-compatible Q4 quantized local LLM model, follow these steps:
 
 - **CPU Compatibility**: This model is designed to run efficiently on CPU-based systems, making it accessible to a wide range of devices and platforms.
 
-- **Can be used through a Browser locally 
+- **Can be used through a Browser locally
+
+![image](https://github.com/akshaykadidal/Riley/assets/7560445/87a54d36-8571-4710-a639-834c3ca025f7)
+
